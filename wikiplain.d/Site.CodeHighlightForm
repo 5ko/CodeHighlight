@@ -1,0 +1,80 @@
+>>frame<<
+$[Summary]: Program code syntax highlighting\\
+$[Version]: {$ExtVersion}\\
+$[Maintainer]: [[https://www.pmwiki.org/petko|Petko]]\\
+$[Cookbook]: [[(Cookbook:){*$ExtName}]]
+>><<
+(:if ! enabled CodeHighlight:)
+
+%red% $[Please enable the extension to see the full configuration form.]
+
+(:ifend:)
+[[#form]]
+
+(:if enabled CodeHighlight:)
+!!!!$[Light color theme] %notoc%
+(:highlightform mode=css-light:)
+
+%newwin% [[ https://highlightjs.org/demo | $[Preview the color themes] ]]
+
+!!!!$[Dark color theme] %notoc%
+(:highlightform mode=css-dark:)
+
+$[Only needed if your skin supports a second theme.] $[PmSyntax has light and dark themes.]
+
+!!!!$[Languages enabled] %notoc%
+(:highlightform mode=languages:)
+
+!!!!$[External languages and styles] %notoc%
+Some languages and styles are currently available via CDN only. If you want these to be added to the extension and be available locally, let me know at Cookbook:{*$xName}.
+(:ifend:)
+[[#formend]]
+
+!! Demo %block id=demo% %pmToggleDarkTheme font-size=1rem% %%
+
+!!! CSS
+%hlt css%[@
+html, body, #bodywrap {
+  font-family: 'Arial', 'Helvetica', sans-serif;
+  font-size: 15px;
+  background-color: var(--pm-bgcolor);
+  color: var(--pm-color);
+  min-height: 100%;
+}@]
+
+
+!!! HTML
+%hlt html%[@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Title of my page</title>
+  <!-- Some comment -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel='stylesheet' href='skin.css' type='text/css' />
+</head>
+<body data-group="{$Group}"></body>
+}@]
+
+
+!!! JavaScript
+%hlt js%[@
+if(Config.darktheme && window.localStorage) {
+  updateDarkTheme(-1);
+  setInterval(updateDarkTheme, 1000);
+}
+
+function ready(){
+  wikitext = document.getElementById('wikitext');
+  var fn = [autotoc, localTimes, highlight_pre];
+  fn.forEach(function(a){a();});
+  
+  if(Config.darktheme && window.localStorage) {
+    tap('.pmToggleDarkTheme', function(){updateDarkTheme(1);});
+  }
+}
+@]
+
+
+
+
