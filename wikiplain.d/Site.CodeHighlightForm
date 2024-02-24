@@ -26,7 +26,7 @@ $[Only needed if your skin supports a second theme.] $[PmSyntax has light and da
 (:highlightform mode=languages:)
 
 !!!!$[External languages and styles] %notoc%
-Some languages and styles are currently available via CDN only. If you want these to be added to the extension and be available locally, let me know at Cookbook:{*$xName}.
+Some languages and styles are currently available via CDN only. If you want these to be added to the extension and be available locally, let me know at Cookbook:{*$ExtName}.
 (:ifend:)
 [[#formend]]
 
