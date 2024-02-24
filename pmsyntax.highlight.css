@@ -1,0 +1,104 @@
+/*!
+  Theme: PmSyntax
+  Description: Styles similar to PmWiki markup highlighting
+  Author / Maintainer: Petko Yotov pmwiki.org/petko
+  Website: https://www.pmwiki.org/
+  License: see project LICENSE
+  Template by: (c) Ivan Sagalaev <maniac@softwaremaniacs.org>
+*/
+pre code.hljs {
+  display:block;
+  overflow-x:auto;
+  padding:1em
+}
+pre.hljs {
+  padding:3px 5px
+}
+.hljs {
+  background:transparent;
+  color:var(--pmsyntax-color);
+}
+.hljs-comment {
+  color: var(--pmsyntax-comment);
+}
+.hljs-punctuation {
+  color:var(--pmsyntax-punct);
+}
+
+.hljs-selector-tag, 
+.hljs-tag .hljs-name {
+  color:var(--pmsyntax-directive);
+  font-weight:700;
+}
+
+.hljs-template-variable,
+.hljs-variable {
+  color: var(--pmsyntax-var);
+}
+
+.hljs-variable a.varlink {
+  color: inherit;
+}
+
+.hljs-property,
+.hljs-attribute,
+.hljs-tag .hljs-attr {
+  color: var(--pmsyntax-attr);
+}
+
+.hljs-doctag,
+.hljs-meta .hljs-keyword {
+  color: var(--pmsyntax-meta);
+  font-weight:700;
+}
+.hljs-keyword {
+  color: var(--pmsyntax-keyword);
+}
+.hljs-number {
+  color: var(--pmsyntax-meta);
+}
+.hljs-deletion,
+.hljs-quote,
+.hljs-selector-class,
+.hljs-selector-id,
+.hljs-string,
+.hljs-template-tag,
+.hljs-type {
+  color:var(--pmsyntax-punct);
+}
+.hljs-section,
+.hljs-title {
+  color: var(--pmsyntax-heading);
+  font-weight:700;
+}
+.hljs-link,
+.hljs-operator,
+.hljs-regexp,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-symbol {
+  color: var(--pmsyntax-url);
+}
+.hljs-literal {
+  color:#78a960
+}
+.hljs-addition,
+.hljs-bullet,
+.hljs-code {
+  color: var(--pmsyntax-mx);
+}
+.hljs-built_in {
+  color: var(--pmsyntax-mx);
+}
+.hljs-meta {
+  color: var(--pmsyntax-meta);
+}
+.hljs-meta .hljs-string {
+  color: var(--pmsyntax-string);
+}
+.hljs-emphasis {
+  font-style:italic;
+}
+.hljs-strong {
+  font-weight:700;
+}
