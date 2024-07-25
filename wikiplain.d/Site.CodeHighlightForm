@@ -2,16 +2,16 @@
 $[Summary]: Program code syntax highlighting\\
 $[Version]: {$ExtVersion}\\
 $[Maintainer]: [[https://www.pmwiki.org/petko|Petko]]\\
-$[Cookbook]: [[(Cookbook:){*$ExtName}]]
+$[Cookbook]: [[(Cookbook:){$ExtName}]]
 >><<
-(:if ! enabled CodeHighlight:)
+(:if ! extension_enabled:)
 
 %red% $[Please enable the extension to see the full configuration form.]
 
 (:ifend:)
 [[#form]]
 
-(:if enabled CodeHighlight:)
+(:if extension_enabled:)
 !!!!$[Light color theme] %notoc%
 (:highlightform mode=css-light:)
 
