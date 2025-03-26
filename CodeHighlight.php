@@ -13,7 +13,7 @@
 
 */
 
-$RecipeInfo['CodeHighlight']['Version'] = '2025-03-26';
+$RecipeInfo['CodeHighlight']['Version'] = '2025-03-26a';
 
 SDVA($CodeHighlight, [
   'css_light' => '',
@@ -32,6 +32,8 @@ function initCodeHighlight() {
   $light = $conf['css_light'];
   $dark = $conf['css_dark'];
   $languages = $conf['languages'];
+  
+  if($light && $light == $dark) $dark = false;
   
   $res = [];
   $attrs = [];
