@@ -13,12 +13,12 @@ $[Cookbook]: [[(Cookbook:){$ExtName}]]
 
 (:if extension_enabled:)
 !!!!$[Light color theme] %notoc%
-(:highlightform mode=css-light:)
+(:highlightform mode=css_light:)
 
 %newwin% [[ https://highlightjs.org/demo | $[Preview the color themes] ]]
 
 !!!!$[Dark color theme] %notoc%
-(:highlightform mode=css-dark:)
+(:highlightform mode=css_dark:)
 
 $[Only needed if your skin supports a second theme.] $[PmSyntax has light and dark themes.]
 

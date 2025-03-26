@@ -1,7 +1,7 @@
 <?php if (!defined('PmWiki')) exit();
 /**
   Programming languages syntax highlighting for PmWiki
-  Written by (c) Petko Yotov 2023-2024   www.pmwiki.org/Petko
+  Written by (c) Petko Yotov 2023-2025   www.pmwiki.org/Petko
   
   This text is written for PmWiki; you can redistribute it and/or
   modify it under the terms of the GNU General Public License
@@ -13,24 +13,24 @@
 
 */
 
-$RecipeInfo['CodeHighlight']['Version'] = '2024-07-25';
+$RecipeInfo['CodeHighlight']['Version'] = '2025-03-26';
 
 SDVA($CodeHighlight, [
-  'css-light' => '',
-  'css-dark' => '',
+  'css_light' => '',
+  'css_dark' => '',
   'languages' => [],
   'CDN' => 'https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@latest/build', 
   'scanCDN' => false,
 ]);
 
 function initCodeHighlight() {
-  global $CodeHighlight, $EnableHighlight;
+  global $CodeHighlight, $EnableHighlight, $PmSyntax;
   $EnableHighlight = 1;
   
   $conf = extGetConfig($CodeHighlight);
   
-  $light = $conf['css-light'];
-  $dark = $conf['css-dark'];
+  $light = $conf['css_light'];
+  $dark = $conf['css_dark'];
   $languages = $conf['languages'];
   
   $res = [];
@@ -50,6 +50,7 @@ function initCodeHighlight() {
     $res[$url] = 1;
   }
   else {
+    if(!IsEnabled($PmSyntax)) $PmSyntax = 1;
     $url = 'pmsyntax.highlight.css';
     $res[$url] = 1;
     if($dark) {
@@ -135,7 +136,7 @@ function FmtHighlightForm($pagename, $d, $args) {
       $stylesCDN = chScanCDN("styles", $styles);
     }
     
-    if($mode == 'css-light')
+    if($mode == 'css_light')
       $out = "(:input select $mode '' 'PmSyntax ($[light+dark])':)";
     else 
       $out = "(:input select $mode '' '$[None]':)";
