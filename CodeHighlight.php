@@ -13,7 +13,7 @@
 
 */
 
-$RecipeInfo['CodeHighlight']['Version'] = '2025-03-26a';
+$RecipeInfo['CodeHighlight']['Version'] = '2026-11-15';
 
 SDVA($CodeHighlight, [
   'css_light' => '',
